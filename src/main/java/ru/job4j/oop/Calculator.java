@@ -12,16 +12,16 @@ public class Calculator {
         return x * a;
     }
 
-    public static int minus(int b) {
-        return x - b;
-    }
-
     public int divide(int c) {
         return x / c;
     }
 
+    public static int minus(int b) {
+        return x - b;
+    }
+
     public int sumAllOperation(int d) {
-        return sum(d) + multiply(d) + minus(d) + divide(d);
+        return sum(d) + multiply(d) + divide(d) + minus(d);
     }
 
     public static void main(String[] args) {
@@ -30,10 +30,10 @@ public class Calculator {
         Calculator calculator = new Calculator();
         result = calculator.multiply(5);
         System.out.println("Mult: " + result);
-        result = minus(10);
-        System.out.println("Sub: " + result);
         result = calculator.divide(5);
         System.out.println("Div: " + result);
+        result = minus(10);
+        System.out.println("Sub: " + result);
         result = calculator.sumAllOperation(5);
         System.out.println("Sum All Operation: " + result);
     }
