@@ -3,14 +3,14 @@ package ru.job4j.oop;
 import static java.lang.Math.sqrt;
 
 public class Triangle {
-    private final Point a;
-    private final Point b;
-    private final Point c;
+    private final Point first;
+    private final Point second;
+    private final Point third;
 
     public Triangle(Point ap, Point bp, Point cp) {
-        this.a = ap;
-        this.b = bp;
-        this.c = cp;
+        this.first = ap;
+        this.second = bp;
+        this.third = cp;
     }
 
     public double semiPerimeter(double a, double b, double c) {
@@ -21,15 +21,15 @@ public class Triangle {
         return ab + ac > bc && ac + bc > ab && ab + bc > ac;
     }
 
-    public double area() {
-        double result = -1;
-        double ab = a.distance(b);
-        double ac = a.distance(c);
-        double bc = b.distance(c);
-        if (this.exist(ab, ac, bc)) {
-            double p = semiPerimeter(ab, ac, bc);
-            return sqrt(p * (p - ab) * (p - ac) * (p - bc));
-        }
-        return result;
+        public double area() {
+            double rsl = -1;
+            double ab = first.distance(second);
+            double ac = first.distance(third);
+            double bc = second.distance(third);
+            if (this.exist(ab, ac, bc)) {
+                double p = semiPerimeter(ab, ac, bc);
+                rsl = sqrt(p * (p - ab) * (p - ac) * (p - bc));
+            }
+            return rsl;
     }
 }
